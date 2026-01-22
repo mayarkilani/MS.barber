@@ -483,3 +483,102 @@ footer p {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
     letter-spacing: 1px;
 }
+/* تنسيقات خاصة للهواتف (شاشات أقل من 768px) */
+@media (max-width: 768px) {
+    /* تصغير حجم الهيدر */
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    /* تصغير النصوص في الواجهة الرئيسية */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* جعل الكروت تظهر تحت بعضها */
+    .courses-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* ضبط نموذج التسجيل */
+    .form-container {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    /* ضبط بطاقة الطالب الرقمية لتناسب عرض الشاشة */
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* صورة واحدة في كل سطر */
+    }
+}
+/* تنسيق زر واتساب العائم */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* جعلناه على اليسار لكي لا يغطي نصوص هامة */
+    background-color: #25d366;
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.whatsapp-float img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+}
+
+/* إخفاء النص في الشاشات الصغيرة جداً وترك الأيقونة فقط */
+@media (max-width: 480px) {
+    .whatsapp-float span {
+        display: none;
+    }
+    .whatsapp-float {
+        padding: 15px;
+        border-radius: 50%;
+    }
+    .whatsapp-float img {
+        margin-right: 0;
+    }
+}
